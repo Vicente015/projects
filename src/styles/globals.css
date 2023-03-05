@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans&display=swap');
+
+html {
+  line-height: 1.75;
+  font-size: 1.25em;
+}
