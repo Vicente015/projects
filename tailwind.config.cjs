@@ -20,7 +20,7 @@ module.exports = {
       }
     },
     fontFamily: {
-      sans: ["'DM Sans'", 'sans-serif']
+      sans: ['Cantarell', "'DM Sans'", 'sans-serif']
     }
   }
 }
