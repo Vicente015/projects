@@ -8,3 +8,22 @@ html {
   line-height: 1.75;
   font-size: 1.25em;
 }
+
+.screenshots .slick-dots li:only-child {
+  display:none
+}
+.screenshots .slick-dots button {
+  color: #fcfcfc;
+}
+.screenshots .slick-dots button::before {
+  font-size:12px;
+  margin-top:4px;
+  color:inherit
+}
+.screenshots .slick-dots .slick-active button::before {
+  color:inherit
+}
+
+.screenshots img {
+  filter: drop-shadow(0 0 9px #222);
+}
