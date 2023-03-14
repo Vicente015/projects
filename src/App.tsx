@@ -1,6 +1,11 @@
+/* eslint-disable @typescript-eslint/no-floating-promises */
+import { useEffect, useRef, useState } from 'react'
 import { ReactComponent as Logo } from './assets/AnnounceItLogo.svg'
 import { ReactComponent as NewspaperIcon } from './assets/newspaper-rounded-symbolic 1.svg'
+import { Contributors } from './components/Contributors'
 import SimpleSlider from './components/Slider'
+import { useContributors } from './hooks/useContributors'
+import { fetchContributors } from './services/contributors'
 
 const features = [
   'title',
@@ -15,6 +20,16 @@ const buttons = [
 ]
 
 function App () {
+  const [contributors, setContributors] = useState(null)
+
+  // todo: fix, this runs twice
+  useEffect(() => {
+    fetchContributors({ repoName: 'AnnounceIt' }).then((newContributors) => {
+      console.debug(newContributors)
+      setContributors(newContributors)
+    })
+  }, [])
+
   return (
     <>
       <main className='min-h-screen font-sans bg-[#2D283C] overflow-hidden'>
@@ -22,7 +37,7 @@ function App () {
           <Logo className='p-1 h-16' />
           <h1 className='text-4xl text-white font-bold'>AnnounceIt</h1>
         </div>
-        <div className='flex flex-col mt-7 max-w-[60ch] m-auto mb-40'>
+        <div className='flex flex-col mt-7 max-w-[60ch] m-auto mb-70'>
           <section className='px-3'>
             <h2 className='text-lg font-bold text-gray-100 my-2'>Publishes announcements in various languages</h2>
             <p className='text-sm text-gray-300 text-justify' style={{ hyphens: 'auto' }}>
@@ -60,7 +75,8 @@ function App () {
             </div>
           </section>
           <section>
-            <h2 className='text-lg font-semibold text-gray-100 my-2'>Get to know the creator</h2>
+            <h2 className='text-lg font-semibold text-gray-100 my-2'>Get to know us</h2>
+            {contributors && <Contributors contributors={contributors} />}
           </section>
           <section>
             <h2 className='text-lg font-semibold text-gray-100 my-2'>More information</h2>
