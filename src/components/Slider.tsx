@@ -10,6 +10,9 @@ export default function SimpleSlider () {
       <div>
         <p>2</p>
       </div>
+      <div>
+        <p>ùwú</p>
+      </div>
     </Slider>
   )
 }

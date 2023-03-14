@@ -9,6 +9,10 @@ html {
   font-size: 1.25em;
 }
 
+.screenshots p {
+  color: white;
+}
+
 .screenshots .slick-dots li:only-child {
   display:none
 }
