@@ -37,7 +37,7 @@ function App () {
           <Logo className='p-1 h-16' />
           <h1 className='text-4xl text-white font-bold'>AnnounceIt</h1>
         </div>
-        <div className='flex flex-col mt-7 max-w-[60ch] m-auto mb-70'>
+        <div className='flex flex-col mt-7 max-w-[60ch] m-auto mb-20'>
           <section className='px-3'>
             <h2 className='text-lg font-bold text-gray-100 my-2'>Publishes announcements in various languages</h2>
             <p className='text-sm text-gray-300 text-justify' style={{ hyphens: 'auto' }}>
