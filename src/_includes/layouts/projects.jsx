@@ -1,6 +1,7 @@
 import Logo from './components/Logo.jsx'
 import NewspaperIcon from './components/NewspaperIcon.jsx'
 import SimpleSlider from './components/Slider.jsx'
+import { Contributors } from './components/Contributors.jsx'
 
 const buttons = [
   { description: 'Invite the bot to your server.', title: 'Invite the bot' },
@@ -8,8 +9,8 @@ const buttons = [
   { description: 'Contribute to the project financialy', title: 'Donate money.' }
 ]
 
-export default ({ title, children, project, projects, content }) => {
-  console.debug({title, project, projects, children, content, buttons})
+export default ({ title, children, project, projects, content, contributors }) => {
+  console.debug({title, project, projects, children, content, buttons, })
   return (
     <html>
       <head>
@@ -69,6 +70,7 @@ export default ({ title, children, project, projects, content }) => {
             </section>
             <section>
               <h2 className='text-lg font-semibold text-gray-100 my-2'>Get to know us</h2>
+              <Contributors contributors={contributors}></Contributors>
             </section>
             <section>
               <h2 className='text-lg font-semibold text-gray-100 my-2'>More information</h2>
