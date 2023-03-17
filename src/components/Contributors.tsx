@@ -4,6 +4,8 @@ import { type ContributionsSchemaType } from '../services/contributors'
 export function Contributors ({ children, ...properties }: PropsWithChildren<{ contributors: ContributionsSchemaType }>) {
   const { contributors } = properties
 
+  console.debug('contributors')
+
   return (
     <div className='flex flex-row gap-16'>
       {

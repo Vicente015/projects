@@ -1,16 +1,17 @@
-import { useCallback, useState } from 'react'
+import { useCallback, useMemo, useState } from 'react'
 import { z } from 'zod'
-import { fetchContributors } from '../services/contributors'
+import { type ContributionsSchemaType, fetchContributors } from '../services/contributors'
 
 export const schema = z.object({
   repoName: z.string().nonempty()
 })
-
 export type Options = z.infer<typeof schema>
 
 export function useContributors () {
-  const [contributors, setContributors] = useState([])
+  const [contributors, setContributors] = useState<ContributionsSchemaType>([])
   const [loading, setLoading] = useState(false)
+
+  console.log('useContributors')
 
   const getContributors = useCallback(async ({ repoName }: Options) => {
     try {
@@ -24,5 +25,9 @@ export function useContributors () {
     }
   }, [])
 
-  return { contributors, getContributors, loading }
+  const sortedContributors = useMemo(() => {
+    return [...contributors].sort((a, b) => a.contributions >= b.contributions)
+  }, [contributors])
+
+  return { contributors: sortedContributors, getContributors, loading }
 }

@@ -33,7 +33,6 @@ export async function fetchContributors ({ repoName }: { repoName: string }) {
       const socialsResponse = await fetch(`${socialsURL(contributor.login)}`, { headers })
       const socialsData = await socialsResponse.json()
       contributor.socials = socialsData
-      console.debug('owo', socialsData)
     }
 
     console.debug('repo', repoData)
