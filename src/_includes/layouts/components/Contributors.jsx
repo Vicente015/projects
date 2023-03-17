@@ -9,8 +9,8 @@ export function Contributors ({ contributors }) {
               <div className='w-20 h-20'>
                 <img className='rounded-full w-full' src={avatarUrl} alt='' />
               </div>
-              <div className='w-max'>
-                <p className='p-1 m-0 rounded-md bg-blurple-400 text-blurple-100 font-bold text-sm uppercase'>
+              <div className='w-max m-0 leading-5'>
+                <p className='p-1 m-0 w-fit rounded-md bg-blurple-400 text-blurple-100 font-bold text-sm uppercase'>
                   {username === 'Vicente015' ? 'Maintainer' : 'Contributor'}
                 </p>
                 <p className='text-slate-50 font-semibold'>{username}</p>

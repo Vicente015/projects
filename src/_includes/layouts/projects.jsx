@@ -3,14 +3,11 @@ import NewspaperIcon from './components/NewspaperIcon.jsx'
 import SimpleSlider from './components/Slider.jsx'
 import { Contributors } from './components/Contributors.jsx'
 
-const buttons = [
-  { description: 'Invite the bot to your server.', title: 'Invite the bot' },
-  { description: 'Contribute to the bot souce code on GitHub.', title: 'Contribute' },
-  { description: 'Contribute to the project financialy', title: 'Donate money.' }
-]
-
 export default ({ title, children, project, projects, content, contributors }) => {
-  console.debug({title, project, projects, children, content, buttons, })
+  console.debug({ title, project, projects, children, content })
+  const buttons = projects[project].buttons
+  console.debug({ buttons })
+
   return (
     <html>
       <head>
@@ -27,6 +24,7 @@ export default ({ title, children, project, projects, content, contributors }) =
           type="text/css"
           href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css"
         />
+        <link as="font" crossorigin="anonymous" href="/assets/Cantarell-Regular.woff2" rel="preload"></link>
       </head>
       <body>
         <main className='min-h-screen font-sans bg-[#2D283C] overflow-hidden'>
@@ -45,12 +43,12 @@ export default ({ title, children, project, projects, content, contributors }) =
             <section>
               <h2 className='text-lg font-semibold text-gray-100 my-2 mt-6'>Get involved</h2>
               <div className='grid gap-1 grid-cols-2'>
-                {buttons?.map(({ description, title }) => {
+                {buttons?.map(({ description, title, icon }) => {
                   return (
                     <a key={title} className='flex gap-4 p-4 rounded-lg hover:bg-blurple-700 hover:bg-opacity-20 transition-colors duration-[.2s] ease-in' href='#'>
                       <div className='rounded-full p-2 bg-blurple-500 w-[60px] h-[60px] flex justify-center items-center'>
                         <div className='w-[50px] p-1'>
-                          <NewspaperIcon />
+                          <img className='w-full p-0' src={`assets/${icon ?? 'plus-symbolic'}.svg`} alt="" />
                         </div>
                       </div>
                       <div className=''>
