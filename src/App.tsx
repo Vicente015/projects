@@ -20,15 +20,13 @@ const buttons = [
 ]
 
 function App () {
-  const [contributors, setContributors] = useState(null)
+  const { contributors, getContributors, loading } = useContributors()
 
-  // todo: fix, this runs twice
+  console.debug('remounted')
+
   useEffect(() => {
-    fetchContributors({ repoName: 'AnnounceIt' }).then((newContributors) => {
-      console.debug(newContributors)
-      setContributors(newContributors)
-    })
-  }, [])
+    getContributors({ repoName: 'AnnounceIt' })
+  }, [getContributors])
 
   return (
     <>
@@ -76,7 +74,7 @@ function App () {
           </section>
           <section>
             <h2 className='text-lg font-semibold text-gray-100 my-2'>Get to know us</h2>
-            {contributors && <Contributors contributors={contributors} />}
+            {loading ? 'Loading' : contributors && <Contributors contributors={contributors} />}
           </section>
           <section>
             <h2 className='text-lg font-semibold text-gray-100 my-2'>More information</h2>
