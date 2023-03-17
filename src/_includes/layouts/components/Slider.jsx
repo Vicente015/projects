@@ -1,5 +1,5 @@
 import React from 'npm:react'
-import Slider from 'npm:react-slick'
+import Slider from "react-slick"
 const PSlider = Slider.default
 
 export default function SimpleSlider () {

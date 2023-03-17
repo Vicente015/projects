@@ -2,6 +2,7 @@ import lume from "lume/mod.ts";
 import jsx from "lume/plugins/jsx.ts";
 import tailwindcss from "lume/plugins/tailwindcss.ts";
 import postcss from "lume/plugins/postcss.ts";
+import svgo from "lume/plugins/svgo.ts";
 
 const site = lume({
   prettyUrls: true,
@@ -9,6 +10,7 @@ const site = lume({
 });
 
 site
+  .copy('assets/')
   .copy('styles/')
   .copy('_includes/assets/')
 
@@ -34,10 +36,11 @@ site
             }
           }
         },
-        fontFamily: { sans: ['Cantarell', "'DM Sans'", 'sans-serif'] }
+        fontFamily: { sans: ['Cantarell', 'sans-serif'] }
       }
     }
   }))
   .use(postcss())
+  .use(svgo())
 
 export default site;
