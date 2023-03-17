@@ -1,0 +1,17 @@
+{
+  "tasks": {
+    "lume": "echo \"import 'lume/cli.ts'\" | deno run --unstable -A -",
+    "build": "deno task lume",
+    "serve": "deno task lume -s"
+  },
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "jsxImportSource": "npm:react"
+  },
+  "imports": {
+    "lume/": "https://deno.land/x/lume@v1.15.3/",
+    "react/jsx-runtime": "https://cdn.skypack.dev/react/jsx-runtime?dts",
+    "react/jsx-dev-runtime": "https://cdn.skypack.dev/react/jsx-dev-runtime?dts",
+    "react-slick": "npm:react-slick"
+  }
+}

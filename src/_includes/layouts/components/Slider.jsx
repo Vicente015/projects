@@ -1,9 +1,10 @@
-import React from 'react'
-import Slider from 'react-slick'
+import React from 'npm:react'
+import Slider from 'npm:react-slick'
+const PSlider = Slider.default
 
 export default function SimpleSlider () {
   return (
-    <Slider {...{ centerMode: false, dots: true }} className='screenshots'>
+    <PSlider {...{ centerMode: false, dots: true }} className='screenshots'>
       <div className='p-2'>
         <img className='m-auto rounded-md' src='https://github.com/Vicente015/AnnounceIt/raw/main/.github/showcase_announceit1.gif' alt='Example gif' />
       </div>
@@ -13,6 +14,6 @@ export default function SimpleSlider () {
       <div>
         <p>ùwú</p>
       </div>
-    </Slider>
+    </PSlider>
   )
 }
