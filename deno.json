@@ -13,6 +13,7 @@
     "react/jsx-runtime": "https://cdn.skypack.dev/react/jsx-runtime?dts",
     "react/jsx-dev-runtime": "https://cdn.skypack.dev/react/jsx-dev-runtime?dts",
     "react-slick": "npm:react-slick",
-    "zod": "npm:zod"
+    "zod": "npm:zod",
+    "@octokit/types": "npm:@octokit/types"
   }
 }

@@ -1,7 +1,7 @@
 import Logo from './components/Logo.jsx'
 import NewspaperIcon from './components/NewspaperIcon.jsx'
 import SimpleSlider from './components/Slider.jsx'
-import { Contributors } from './components/Contributors.jsx'
+import { Contributors } from './components/Contributors.tsx'
 
 export default ({ title, children, project, projects, content, contributors }) => {
   console.debug({ title, project, projects, children, content })
