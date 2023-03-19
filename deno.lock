@@ -439,6 +439,7 @@
   "npm": {
     "specifiers": {
       "@lumeland/tailwindcss@3.2.5": "@lumeland/tailwindcss@3.2.5_postcss@8.4.21",
+      "@octokit/types": "@octokit/types@9.0.0",
       "autoprefixer@10.4.13": "autoprefixer@10.4.13_postcss@8.4.21",
       "date-fns@2.29.3": "date-fns@2.29.3",
       "markdown-it-attrs@4.1.6": "markdown-it-attrs@4.1.6_markdown-it@13.0.1",
@@ -524,6 +525,16 @@
         "dependencies": {
           "@nodelib/fs.scandir": "@nodelib/fs.scandir@2.1.5",
           "fastq": "fastq@1.15.0"
+        }
+      },
+      "@octokit/openapi-types@16.0.0": {
+        "integrity": "sha512-JbFWOqTJVLHZSUUoF4FzAZKYtqdxWu9Z5m2QQnOyEa04fOFljvyh7D3GYKbfuaSWisqehImiVIMG4eyJeP5VEA==",
+        "dependencies": {}
+      },
+      "@octokit/types@9.0.0": {
+        "integrity": "sha512-LUewfj94xCMH2rbD5YJ+6AQ4AVjFYTgpp6rboWM5T7N3IsIF65SBEOVcYMGAEzO/kKNiNaW4LoWtoThOhH06gw==",
+        "dependencies": {
+          "@octokit/openapi-types": "@octokit/openapi-types@16.0.0"
         }
       },
       "@trysound/sax@0.2.0": {
