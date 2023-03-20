@@ -44,9 +44,9 @@ site
   .use(postcss())
   .use(svgo())
 
-const markdownToHtml = (pages: Page[]) => pages.forEach((page) =>
-  site.hooks.markdownIt((engine: MarkdownEngine) => engine.render(page.data.body.toString()).trim())
-)
+const markdownToHtml = (pages: Page[]) => pages.forEach((page) => {
+  page.data.body = site.hooks.markdownIt((engine: MarkdownEngine) => engine.render(page.data.body.toString()).trim())
+})
 
 site.preprocessAll([".html", ".md", ".jsx", ".md"], markdownToHtml)
 
