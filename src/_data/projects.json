@@ -1,17 +1,19 @@
 {
   "AnnounceIt": {
     "name": "AnnounceIt",
-    "headline": "uwu",
+    "headline": "Publishes announcements in various languages",
     "buttons": [
       {
         "icon": "plus-symbolic",
         "description": "Invite the bot to your server.",
-        "title": "Invite the bot"
+        "title": "Invite the bot",
+        "url": "https://discord.com/api/oauth2/authorize?client_id=725373172391739402&permissions=274878221312&scope=bot"
       },
       {
         "icon": "handshake-symbolic",
         "description": "Contribute to the bot source code on GitHub.",
-        "title": "Contribute"
+        "title": "Contribute",
+        "url": "https://github.com/Vicente015/AnnounceIt/#contribute"
       },
       {
         "icon": "money-symbolic",
@@ -19,5 +21,9 @@
         "title": "Donate money"
       }
     ]
+  },
+  "Instatus.ts": {
+    "name": "Instatus.ts",
+    "headline": "Library for Instatus"
   }
 }

@@ -1,4 +1,8 @@
 
+# Projects
 
-- Pasar a TypeScript.
--
+Website for my projects.
+
+Uses:
+  * [Lume](https://lume.land/).
+  * Deno.
