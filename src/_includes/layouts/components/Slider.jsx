@@ -2,6 +2,8 @@ import React from 'npm:react'
 import Slider from "react-slick"
 const PSlider = Slider.default
 
+// todo: wip, make dynamic
+
 export default function SimpleSlider () {
   return (
     <PSlider {...{ centerMode: false, dots: true }} className='screenshots'>

@@ -1,21 +1,10 @@
-import type { Page, PageData } from "lume/core.ts"
-import type { PageHelpers } from "lume/core.ts"
-import { ContributionsSchemaType } from "../../../_data/contributors.ts";
+export function Contributors ({ contributors }) {
+  if (!contributors) return
 
-interface CustomPageData extends PageData {
-  contributors: ContributionsSchemaType;
-}
-
-// Create a new interface for `custom.tsx`
-interface CustomPage extends Page {
-  data: CustomPageData;
-}
-
-export function Contributors ({ contributors }: CustomPageData) {
   return (
     <div className='flex flex-row gap-16'>
       {
-        contributors.map(({ avatarUrl, contributions, socialAccounts, username }) => {
+        contributors?.map(({ avatarUrl, contributions, socialAccounts, username }) => {
           return (
             <div key={username} className='flex flex-row gap-4 '>
               <div className='w-20 h-20'>

@@ -3,16 +3,17 @@ import jsx from "lume/plugins/jsx.ts";
 import tailwindcss from "lume/plugins/tailwindcss.ts";
 import postcss from "lume/plugins/postcss.ts";
 import svgo from "lume/plugins/svgo.ts";
+import { MarkdownEngine } from "lume/plugins/markdown.ts";
+import { Page } from "lume/core.ts";
 
 const site = lume({
   prettyUrls: true,
-  src: './src/'
+  src: './src/',
 });
 
 site
   .copy('assets/')
   .copy('styles/')
-  .copy('_includes/assets/')
 
 site
   .use(jsx())
@@ -42,5 +43,11 @@ site
   }))
   .use(postcss())
   .use(svgo())
+
+const markdownToHtml = (pages: Page[]) => pages.forEach((page) =>
+  site.hooks.markdownIt((engine: MarkdownEngine) => engine.render(page.data.body.toString()).trim())
+)
+
+site.preprocessAll([".html", ".md", ".jsx", ".md"], markdownToHtml)
 
 export default site;
