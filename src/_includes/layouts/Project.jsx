@@ -1,5 +1,6 @@
 import SimpleSlider from './components/Slider.jsx'
 import { Contributors } from './components/Contributors.jsx'
+import Head from './partials/Head.jsx'
 
 // todo: reset tailwind styles in project body content
 
@@ -8,22 +9,7 @@ export default ({ title, name, projects, buttons, body: content, contributorsDat
 
   return (
     <html>
-      <head>
-        <title>{title}</title>
-        <link rel="stylesheet" href="/styles/styles.css" />
-        <link
-          rel="stylesheet"
-          type="text/css"
-          charset="UTF-8"
-          href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css"
-        />
-        <link
-          rel="stylesheet"
-          type="text/css"
-          href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css"
-        />
-        <link as="font" crossorigin="anonymous" href="/assets/Cantarell-Regular.woff2" rel="preload"></link>
-      </head>
+      <Head />
       <body>
         <main className='min-h-screen font-sans bg-[#2D283C] overflow-hidden'>
           <div className='flex justify-center items-center gap-4 m-auto p-20 bg-blurple-500'>
