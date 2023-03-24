@@ -1,5 +1,5 @@
 import React from 'npm:react'
-import Slider from "react-slick"
+import Slider from 'react-slick'
 const PSlider = Slider.default
 
 // todo: wip, make dynamic

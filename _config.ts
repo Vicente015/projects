@@ -34,6 +34,18 @@ site
               700: '#424cb6',
               800: '#353d91',
               900: '#2b3177'
+            },
+            greeny: {
+              50: "#E7ECEE",
+              100: "#CDD7DA",
+              200: "#9EB2B8",
+              300: "#6B8A94",
+              400: "#475B61",
+              500: "#232D30",
+              600: "#1C2426",
+              700: "#151C1E",
+              800: "#0F1315",
+              900: "#060809"
             }
           }
         },
@@ -44,10 +56,15 @@ site
   .use(postcss())
   .use(svgo())
 
-/* const markdownToHtml = (pages: Page[]) => pages.forEach((page) => {
-  page.data.body = site.hooks.markdownIt((engine: MarkdownEngine) => engine.render(page.data.body.toString()).trim())
-})
+const markdownToHtml = (pages: Page[]) => {
+  for (const page of pages) {
+    const pageContent: string = (page.data.content as string).toString()
+    site.hooks.markdownIt((engine: MarkdownEngine) => {
+      page.data.content = engine.render(pageContent.toString()).trim()
+    })
+  }
+}
 
-site.preprocessAll([".html", ".md", ".jsx", ".md"], markdownToHtml)
- */
+site.preprocessAll([".md", ".html"], markdownToHtml)
+
 export default site;

@@ -3,19 +3,19 @@
  * Generates /projects/{name} routes dynamically
  * https://lume.land/docs/core/multiple-pages/
  */
-export default function* ({ projects }) {
+export default function * ({ projects }) {
   for (const project of Object.values(projects)) {
-    let body
+    let content = ''
     try {
-      body = Deno.readTextFileSync(`src/_projects/${project.name}.md`)
-    } catch {
-      body = ''
+      content = Deno.readTextFileSync(`src/_projects/${project.name}.md`)
+    } catch (err) {
+      console.error('Project markdown file not found, using empty body', err)
     }
 
     yield {
       url: `/projects/${project.name}.html`,
       title: project.name,
-      body: body,
+      content,
       layout: 'layouts/Project.jsx',
       ...project
     }

@@ -40,6 +40,7 @@ const fetchContributors = async ({ projects }: { projects: string[] }) => {
 
       const repoResponse = await fetch(`${contributorsURL(repoName)}?${queryParameters}`, { headers })
       const repoData: GetRepoContributorsResponse = await repoResponse.json()
+      console.debug('Getting contributors data for ' + repoName, repoData)
       for (const contributor of repoData) {
         if (!contributor.login) continue
         const socialsResponse = await fetch(`${socialsURL(contributor.login)}`, { headers })
