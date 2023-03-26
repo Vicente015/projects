@@ -12,9 +12,9 @@
     "lume/": "https://deno.land/x/lume@v1.15.3/",
     "react/jsx-runtime": "https://cdn.skypack.dev/react/jsx-runtime?dts",
     "react/jsx-dev-runtime": "https://cdn.skypack.dev/react/jsx-dev-runtime?dts",
-    "react-slick": "npm:react-slick",
     "zod": "npm:zod",
     "@octokit/types": "npm:@octokit/types",
-    "@tailwindcss/typography": "npm:@tailwindcss/typography"
+    "@tailwindcss/typography": "npm:@tailwindcss/typography",
+    "blaze-slider": "npm:blaze-slider"
   }
 }

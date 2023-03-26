@@ -1,5 +1,5 @@
 
-export default function Buttons ({ buttons }) {
+export default function ({ buttons }) {
   return (
     <div
       className='grid gap-1 grid-cols-2 my-2'

@@ -1,5 +1,5 @@
 
-export default function Contributors ({ contributors }) {
+export default function ({ contributors }) {
   if (!contributors) return
 
   return (

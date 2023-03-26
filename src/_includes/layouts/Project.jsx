@@ -1,12 +1,11 @@
-import SimpleSlider from './components/Slider.jsx'
-import Contributors from './components/Contributors.jsx'
-import Buttons from './components/Buttons.jsx'
 import Head from './partials/Head.jsx'
 
 // todo: reset tailwind styles in project body content
+// todo: use content component
 
-export default ({ title, name, projects, buttons, content, contributorsData, headline, ...args }) => {
+export default ({ title, name, projects, buttons, content, contributorsData, headline, comp, ...args }) => {
   const contributors = contributorsData.get(name)
+  console.debug({ ...args })
 
   return (
     <html>
@@ -28,17 +27,17 @@ export default ({ title, name, projects, buttons, content, contributorsData, hea
             </section>
             <section>
               <h2 className='text-lg font-semibold text-gray-100 my-2 mt-6'>Get involved</h2>
-              <Buttons buttons={buttons} />
+              <comp.Buttons buttons={buttons} />
             </section>
             <section>
               <h2 className='text-lg font-semibold text-gray-100 my-2'>Explore the features</h2>
               <div className='p-4'>
-                <SimpleSlider />
+                <comp.Slider />
               </div>
             </section>
             <section>
               <h2 className='text-lg font-semibold text-gray-100 my-2'>Get to know us</h2>
-              <Contributors contributors={contributors} />
+              <comp.Contributors contributors={contributors} />
             </section>
             <section>
               <h2 className='text-lg font-semibold text-gray-100 my-2'>More information</h2>
