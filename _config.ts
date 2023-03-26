@@ -12,6 +12,7 @@ const site = lume({
 });
 
 site
+  .copy('assets/Cantarell-Regular.woff2')
   .copy('assets/')
   .copy('styles/')
 

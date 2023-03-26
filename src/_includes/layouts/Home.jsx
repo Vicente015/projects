@@ -8,7 +8,7 @@ export default function ({ page, content }) {
   return (
     <html>
       <Head />
-      <body className='min-h-screen bg-greeny-600 max-w-[70ch] m-auto p-5'>
+      <body className='min-h-screen bg-gray-800 max-w-[70ch] m-auto p-5'>
         <main className='font-sans'>
           <h1 className='text-lg text-gray-100 font-bold'>My projects</h1>
           <Content content={content} />
@@ -19,7 +19,8 @@ export default function ({ page, content }) {
                   description: headline,
                   title: name,
                   icon: `logo-${name.toLowerCase()}`,
-                  url: `/projects/${name}`
+                  url: `/projects/${name}`,
+                  openSelf: true
                 }))
               }
             />
