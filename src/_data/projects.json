@@ -20,6 +20,9 @@
         "description": "Contribute to the project financially",
         "title": "Donate money"
       }
+    ],
+    "featuresGifs": [
+      "https://github.com/Vicente015/AnnounceIt/raw/main/.github/showcase_announceit1.gif"
     ]
   },
   "Instatus.ts": {

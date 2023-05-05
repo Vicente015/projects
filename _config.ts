@@ -12,7 +12,7 @@ const site = lume({
   src: './src/',
 })
 
-site.remoteFile('assets/blaze-slider/blaze.css', 'https://unpkg.com/blaze-slider@latest/dist/blaze.css')
+site.remoteFile('styles/blaze.css', 'https://unpkg.com/blaze-slider@latest/dist/blaze.css')
 
 site
   .copy('assets/script.js')

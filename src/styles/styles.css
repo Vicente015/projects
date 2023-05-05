@@ -29,3 +29,55 @@ html {
 .screenshots img {
   filter: drop-shadow(0 0 9px #222);
 }
+
+.slider-pagination .blaze-prev, .slider-pagination .blaze-next {
+  display: block;
+}
+
+.slider-prev button {
+  font-size: 0;
+  display: block;
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  padding: 5px;
+  background-color: red;
+}
+
+
+
+.slider-prev button::before {
+  content: '';
+}
+
+.blaze-pagination {
+  margin-top: 1em;
+  display: flex;
+  flex-direction: row;
+  gap: .5em;
+  justify-content: center;
+}
+
+.blaze-pagination button {
+  font-size: 0;
+  display: block;
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.blaze-pagination button {
+  border-radius: 100%;
+  background-color: gray;
+}
+
+.blaze-pagination .active {
+  background-color: white;
+}
+
+.blaze-pagination button::before {
+  content: '';
+}

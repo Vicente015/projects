@@ -1,4 +1,4 @@
-
+// todo: rename to links/elements
 export default function ({ buttons }) {
   return (
     <div

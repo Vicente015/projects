@@ -3,7 +3,7 @@ import Head from './partials/Head.jsx'
 // todo: reset tailwind styles in project body content
 // todo: use content component
 
-export default ({ title, name, projects, buttons, content, contributorsData, headline, comp, ...args }) => {
+export default ({ title, name, projects, buttons, content, contributorsData, headline, comp, featuresGifs, ...args }) => {
   const contributors = contributorsData.get(name)
   console.debug({ ...args })
 
@@ -25,20 +25,32 @@ export default ({ title, name, projects, buttons, content, contributorsData, hea
                 dangerouslySetInnerHTML={{ __html: content }}
               />
             </section>
-            <section>
-              <h2 className='text-lg font-semibold text-gray-100 my-2 mt-6'>Get involved</h2>
-              <comp.Buttons buttons={buttons} />
-            </section>
-            <section>
-              <h2 className='text-lg font-semibold text-gray-100 my-2'>Explore the features</h2>
-              <div className='p-4'>
-                <comp.Slider />
-              </div>
-            </section>
-            <section>
-              <h2 className='text-lg font-semibold text-gray-100 my-2'>Get to know us</h2>
-              <comp.Contributors contributors={contributors} />
-            </section>
+            {
+              buttons && (
+                <section>
+                  <h2 className='text-lg font-semibold text-gray-100 my-2 mt-6'>Get involved</h2>
+                  <comp.Buttons buttons={buttons} />
+                </section>
+              )
+            }
+            {
+              featuresGifs && (
+                <section>
+                  <h2 className='text-lg font-semibold text-gray-100 my-2'>Explore the features</h2>
+                  <div className='p-4'>
+                    <comp.Slider />
+                  </div>
+                </section>
+              )
+            }
+            {
+              (contributors?.length > 0) && (
+                <section>
+                  <h2 className='text-lg font-semibold text-gray-100 my-2'>Get to know us</h2>
+                  <comp.Contributors contributors={contributors} />
+                </section>
+              )
+            }
             <section>
               <h2 className='text-lg font-semibold text-gray-100 my-2'>More information</h2>
             </section>
