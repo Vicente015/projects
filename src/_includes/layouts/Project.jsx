@@ -1,29 +1,26 @@
+import GoBackButton from '../../_components/GoBackButton.jsx';
 import Head from './partials/Head.jsx'
+import { existsSync } from "https://deno.land/std/fs/mod.ts";
 
 // todo: reset tailwind styles in project body content
-// todo: use content component
 
-export default ({ title, name, projects, buttons, content, contributorsData, headline, comp, featuresGifs, ...args }) => {
+export default ({ title, name, projects, buttons, content, contributorsData, headline, comp, featuresGifs, logo, ...args }) => {
   const contributors = contributorsData.get(name)
-  console.debug({ ...args })
 
   return (
     <html>
       <Head />
       <body>
         <main className='min-h-screen font-sans bg-gray-800 overflow-hidden'>
-          <div className='flex flex-wrap justify-center items-center gap-4 m-auto p-20 bg-blurple-500'>
-            <img className='p-1 h-16' src={`/assets/logo-${name.toLowerCase()}.svg`} alt='logo' />
+          <GoBackButton></GoBackButton>
+          <div className='flex flex-row flex-wrap justify-center items-center gap-4 m-auto p-20 bg-blurple-500'>
+            <img className='p-1 h-16' src={existsSync(`src/assets/logo-${name.toLowerCase()}.svg`) ? `/assets/logo-${name.toLowerCase()}.svg` : logo} alt='logo' />
             <h1 className='text-4xl text-white font-bold'>{name}</h1>
           </div>
           <div className='flex flex-col max-w-[60ch] m-auto mb-20 p-5'>
             <section>
               <h2 className='text-lg font-bold text-gray-100 my-2'>{headline}</h2>
-              <div
-                className='text-sm text-gray-300 text-justify prose prose-lg'
-                style={{ hyphens: 'auto' }}
-                dangerouslySetInnerHTML={{ __html: content }}
-              />
+              <comp.Content content={content}></comp.Content>
             </section>
             {
               buttons && (
@@ -38,7 +35,7 @@ export default ({ title, name, projects, buttons, content, contributorsData, hea
                 <section>
                   <h2 className='text-lg font-semibold text-gray-100 my-2'>Explore the features</h2>
                   <div className='p-4'>
-                    <comp.Slider />
+                    <comp.Slider elements={featuresGifs} />
                   </div>
                 </section>
               )
@@ -57,6 +54,6 @@ export default ({ title, name, projects, buttons, content, contributorsData, hea
           </div>
         </main>
       </body>
-    </html>
+    </html >
   )
 }

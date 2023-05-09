@@ -3,7 +3,6 @@ import jsx from "lume/plugins/jsx.ts";
 import tailwindcss from "lume/plugins/tailwindcss.ts";
 import postcss from "lume/plugins/postcss.ts";
 import svgo from "lume/plugins/svgo.ts";
-import esbuild from "lume/plugins/esbuild.ts";
 import { MarkdownEngine } from "lume/plugins/markdown.ts";
 import { Page } from "lume/core.ts";
 

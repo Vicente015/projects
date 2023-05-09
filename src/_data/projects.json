@@ -26,7 +26,8 @@
     ]
   },
   "Instatus.ts": {
-    "name": "Instatus.ts",
-    "headline": "Library for Instatus"
+    "name": "Instatusts",
+    "headline": "Library for Instatus",
+    "logo": "https://raw.githubusercontent.com/Vicente015/instatus.ts/main/.github/header.svg "
   }
 }

@@ -11,7 +11,7 @@ export default function ({ contributors }) {
         contributors?.map(({ avatarUrl, contributions, socialAccounts, username }) => {
           return (
             <div key={username} className='flex flex-row gap-4 '>
-              <div className='w-20 h-20'>
+              <div className='w-20 h-20 shadow-md'>
                 <img className='rounded-full w-full' src={avatarUrl} alt='' />
               </div>
               <div className='w-max m-0 leading-5'>

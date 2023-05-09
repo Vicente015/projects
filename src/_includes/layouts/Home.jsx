@@ -1,4 +1,5 @@
 import Head from './partials/Head.jsx'
+import { existsSync } from "https://deno.land/std/fs/mod.ts";
 
 export default function ({ page, content, comp }) {
   const projects = Object.values(page.data.projects)
@@ -16,7 +17,7 @@ export default function ({ page, content, comp }) {
                 projects.map(({ name, headline }) => ({
                   description: headline,
                   title: name,
-                  icon: `logo-${name.toLowerCase()}`,
+                  icon: existsSync(`src/assets/logo-${name.toLowerCase()}.svg`) ? `logo-${name.toLowerCase()}` : null,
                   url: `/projects/${name}`,
                   openSelf: true
                 }))
