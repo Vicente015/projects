@@ -1,4 +1,3 @@
-import GoBackButton from '../../_components/GoBackButton.jsx';
 import Head from './partials/Head.jsx'
 import { existsSync } from "https://deno.land/std/fs/mod.ts";
 
@@ -12,7 +11,7 @@ export default ({ title, name, projects, buttons, content, contributorsData, hea
       <Head />
       <body>
         <main className='min-h-screen font-sans bg-gray-800 overflow-hidden'>
-          <GoBackButton></GoBackButton>
+          <comp.GoBackButton />
           <div className='flex flex-row flex-wrap justify-center items-center gap-4 m-auto p-20 bg-blurple-500'>
             <img className='p-1 h-16' src={existsSync(`src/assets/logo-${name.toLowerCase()}.svg`) ? `/assets/logo-${name.toLowerCase()}.svg` : logo} alt='logo' />
             <h1 className='text-4xl text-white font-bold'>{name}</h1>
