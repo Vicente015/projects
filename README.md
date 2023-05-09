@@ -9,4 +9,4 @@ Uses:
 
 ### Todo
 - Use TypeScript as possible
-- Make img slider work
+- Add more projects.
