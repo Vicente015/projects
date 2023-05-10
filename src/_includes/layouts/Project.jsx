@@ -3,8 +3,11 @@ import { existsSync } from "https://deno.land/std/fs/mod.ts";
 
 // todo: reset tailwind styles in project body content
 
-export default ({ title, name, projects, buttons, content, contributorsData, headline, comp, featuresGifs, logo, ...args }) => {
+export default ({ title, name, projects, buttons, content, contributorsData, releasesData, headline, comp, featuresGifs, logo, ...args }) => {
   const contributors = contributorsData.get(name)
+  const latestRelease = releasesData.get(name)
+
+  console.debug('end', latestRelease, args)
 
   return (
     <html>
@@ -47,9 +50,19 @@ export default ({ title, name, projects, buttons, content, contributorsData, hea
                 </section>
               )
             }
-            <section>
-              <h2 className='text-lg font-semibold text-gray-100 my-2'>More information</h2>
-            </section>
+            {
+              latestRelease && (
+                <section>
+                  <h2 className='text-lg font-semibold text-gray-100 my-2'>More information</h2>
+                  <comp.Buttons buttons={[{
+                    title: 'Latest release',
+                    description: `Latest version ${latestRelease.name} released on ${new Date(latestRelease.published_at).toString()}`,
+                    icon: 'newspaper-icon',
+                    url: latestRelease.html_url
+                  }]} />
+                </section>
+              )
+            }
           </div>
         </main>
       </body>

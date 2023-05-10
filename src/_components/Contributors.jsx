@@ -16,7 +16,7 @@ export default function ({ contributors }) {
               </div>
               <div className='w-max m-0 leading-5'>
                 <p
-                  className='p-1 m-0 w-fit rounded-md bg-blurple-400 text-blurple-100 font-bold text-xs uppercase'
+                  className='p-1 m-0 w-fit rounded-md bg-blurple-400 text-gray-100 font-bold text-xs uppercase'
                 >
                   {username === 'Vicente015' ? 'Maintainer' : 'Contributor'}
                 </p>

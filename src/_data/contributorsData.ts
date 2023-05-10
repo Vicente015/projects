@@ -47,14 +47,16 @@ const fetchContributors = async ({ projects }: { projects: string[] }) => {
         const socialsData: SocialAccountsSchemaType = await socialsResponse.json()
         contributor.socials = socialsData
       }
-      if (!repoResponse.ok) return finalData
+      if (!repoResponse.ok) continue
 
-      finalData.set(repoName, ResponseSchema.parse(repoData?.map((contributor) => ({
-        avatarUrl: contributor.avatar_url,
-        contributions: contributor.contributions,
-        socialAccounts: contributor.socials,
-        username: contributor.login
-      }))))
+      finalData.set(repoName, ResponseSchema.parse(
+        repoData?.map((contributor) => ({
+          avatarUrl: contributor.avatar_url,
+          contributions: contributor.contributions,
+          socialAccounts: contributor.socials,
+          username: contributor.login
+        }))
+      ))
     } catch (err) {
       console.error(err)
     }

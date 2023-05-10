@@ -3,7 +3,7 @@
  * Generates /projects/{name} routes dynamically
  * https://lume.land/docs/core/multiple-pages/
  */
-export default function * ({ projects }) {
+export default function* ({ projects }) {
   for (const project of Object.values(projects)) {
     let content = ''
     try {
@@ -13,7 +13,7 @@ export default function * ({ projects }) {
     }
 
     yield {
-      url: `/projects/${project.name}.html`,
+      url: `/projects/${project.name.replace('.', '')}.html`,
       title: project.name,
       content,
       layout: 'layouts/Project.jsx',

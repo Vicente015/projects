@@ -26,8 +26,21 @@
     ]
   },
   "Instatus.ts": {
-    "name": "Instatusts",
+    "name": "Instatus.ts",
     "headline": "Library for Instatus",
+    "buttons": [
+      {
+        "icon": "handshake-symbolic",
+        "description": "Contribute to the bot source code on GitHub.",
+        "title": "Contribute",
+        "url": "https://github.com/Vicente015/instatus.ts/#contribute"
+      },
+      {
+        "icon": "money-symbolic",
+        "description": "Contribute to the project financially",
+        "title": "Donate money"
+      }
+    ],
     "logo": "https://raw.githubusercontent.com/Vicente015/instatus.ts/main/.github/header.svg "
   }
 }
