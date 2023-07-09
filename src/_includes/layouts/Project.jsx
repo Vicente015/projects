@@ -1,5 +1,6 @@
 import Head from './partials/Head.jsx'
-import { existsSync } from "https://deno.land/std/fs/mod.ts";
+import { existsSync } from "https://deno.land/std/fs/mod.ts"
+import dayjs from 'npm:dayjs'
 
 // todo: reset tailwind styles in project body content
 
@@ -16,7 +17,7 @@ export default ({ title, name, projects, buttons, content, contributorsData, rel
         <main className='min-h-screen font-sans bg-gray-800 overflow-hidden'>
           <comp.GoBackButton />
           <div className='flex flex-row flex-wrap justify-center items-center gap-4 m-auto p-20 bg-blurple-500'>
-            <img className='p-1 h-16' src={existsSync(`src/assets/logo-${name.toLowerCase()}.svg`) ? `/assets/logo-${name.toLowerCase()}.svg` : logo} alt='logo' />
+            <img className='p-1 h-16' src={existsSync(`src/assets/logo-${name.toLowerCase()}.svg`) ? `/assets/logo-${name.toLowerCase()}.svg` : `/assets/${logo ?? 'library-symbolic'}.svg`} alt='logo' />
             <h1 className='text-4xl text-white font-bold'>{name}</h1>
           </div>
           <div className='flex flex-col max-w-[60ch] m-auto mb-20 p-5'>
@@ -56,7 +57,7 @@ export default ({ title, name, projects, buttons, content, contributorsData, rel
                   <h2 className='text-lg font-semibold text-gray-100 my-2'>More information</h2>
                   <comp.Buttons buttons={[{
                     title: 'Latest release',
-                    description: `Latest version ${latestRelease.name} released on ${new Date(latestRelease.published_at).toString()}`,
+                    description: `Latest version ${latestRelease.name} released on ${dayjs(latestRelease.published_at).format('YYYY/MM/DD')}`,
                     icon: 'newspaper-icon',
                     url: latestRelease.html_url
                   }]} />

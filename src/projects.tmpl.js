@@ -5,9 +5,10 @@
  */
 export default function* ({ projects }) {
   for (const project of Object.values(projects)) {
+    const name = project.name.replaceAll('.', '')
     let content = ''
     try {
-      content = Deno.readTextFileSync(`src/_projects/${project.name}.md`)
+      content = Deno.readTextFileSync(`src/_projects/${name}.md`)
     } catch (err) {
       console.error('Project markdown file not found, using empty body', err)
     }

@@ -14,11 +14,11 @@ export default function ({ page, content, comp }) {
           <section>
             <comp.Buttons
               buttons={
-                projects.map(({ name, headline }) => ({
+                projects.map(({ name, logo, headline }) => ({
                   description: headline,
                   title: name,
-                  icon: existsSync(`src/assets/logo-${name.toLowerCase()}.svg`) ? `logo-${name.toLowerCase()}` : null,
-                  url: `/projects/${name}`,
+                  icon: logo ?? `logo-${name.toLowerCase()}`,
+                  url: `/projects/${name.replaceAll('.', '')}`,
                   openSelf: true
                 }))
               }
