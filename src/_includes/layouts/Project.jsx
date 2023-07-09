@@ -12,7 +12,7 @@ export default ({ title, name, projects, buttons, content, contributorsData, rel
 
   return (
     <html>
-      <Head />
+      <Head title={title} />
       <body>
         <main className='min-h-screen font-sans bg-gray-800 overflow-hidden'>
           <comp.GoBackButton />
