@@ -21,7 +21,7 @@ export default function ({ contributors }) {
                   {username === 'Vicente015' ? 'Maintainer' : 'Contributor'}
                 </p>
                 <p className='text-slate-50 font-semibold text-base'>{username}</p>
-                <p className='text-slate-200 font-normal text-sm'>{contributions} contributions</p>
+                <p className='text-slate-200 font-normal text-sm'>{contributions} {contributions < 2 ? 'contribution' : 'contributions'}</p>
                 <ul className='flex flex-row gap-4 text-sm'>
                   {
                     socialAccounts?.map((social) => {
