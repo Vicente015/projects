@@ -10,6 +10,12 @@
         "url": "https://discord.com/api/oauth2/authorize?client_id=725373172391739402&permissions=274878221312&scope=bot"
       },
       {
+        "icon": "chat-bubbles-empty-inverted-symbolic",
+        "description": "Join the support server",
+        "title": "Support server",
+        "url": "https://discord.gg/tf7HXUgFKt"
+      },
+      {
         "icon": "handshake-symbolic",
         "description": "Contribute to the bot source code on GitHub.",
         "title": "Contribute",
