@@ -1,11 +1,11 @@
 
-export default function Head ({ title }) {
+export default function Head ({ metas }) {
   return (
     <head>
-      <title>{title}</title>
+      <title>{metas.title}</title>
       <meta charSet='UTF-8' />
-      <meta httpEquiv='X-UA-Compatible' content='IE=edge' />
       <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+      <link rel="icon" href={metas.icon} />
       <link rel="stylesheet" href="/styles/blaze.css" />
       <link rel='stylesheet' href='/styles/styles.css' />
       <link rel='stylesheet' href='/components.css' />

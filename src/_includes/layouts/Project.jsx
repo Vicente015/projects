@@ -4,15 +4,13 @@ import dayjs from 'npm:dayjs'
 
 // todo: reset tailwind styles in project body content
 
-export default ({ title, name, projects, buttons, content, contributorsData, releasesData, headline, comp, featuresGifs, logo, ...args }) => {
+export default ({ name, metas, projects, buttons, content, contributorsData, releasesData, headline, comp, featuresGifs, logo, ...args }) => {
   const contributors = contributorsData.get(name)
   const latestRelease = releasesData.get(name)
 
-  console.debug('end', latestRelease, args)
-
   return (
     <html>
-      <Head title={title} />
+      <Head metas={metas} />
       <body>
         <main className='min-h-screen font-sans bg-gray-800 overflow-hidden'>
           <comp.GoBackButton />

@@ -15,9 +15,13 @@ export default function* ({ projects }) {
 
     yield {
       url: `/projects/${project.name.replace('.', '')}.html`,
-      title: project.name,
-      content,
       layout: 'layouts/Project.jsx',
+      metas: {
+        title: project.name,
+        description: project.headline,
+        icon: `/assets/${project.logo ?? 'logo-' + project.name.toLowerCase()}.svg`
+      },
+      content,
       ...project
     }
   }

@@ -5,7 +5,7 @@ export default function ({ page, content, comp, title }) {
   const projects = Object.values(page.data.projects)
   return (
     <html>
-      <Head title={title} />
+      <Head metas={{ title }} />
       <body className='min-h-screen bg-gray-800 max-w-[70ch] m-auto p-5'>
         <main className='font-sans'>
           <h1 className='text-lg text-gray-100 font-bold'>My projects</h1>

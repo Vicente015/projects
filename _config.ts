@@ -1,5 +1,6 @@
 import lume from "lume/mod.ts";
 import jsx from "lume/plugins/jsx.ts";
+import metas from "lume/plugins/metas.ts";
 import tailwindcss from "lume/plugins/tailwindcss.ts";
 import postcss from "lume/plugins/postcss.ts";
 import svgo from "lume/plugins/svgo.ts";
@@ -59,6 +60,7 @@ site
   }))
   .use(postcss())
   .use(svgo())
+  .use(metas())
 
 const markdownToHtml = (pages: Page[]) => {
   for (const page of pages) {
